@@ -128,8 +128,9 @@ if (contactForm) {
         emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, this)
             .then(() => {
                 btn.innerText = 'Send Message';
-                alert('Success! Message sent to Stella. 🚀');
-                contactForm.reset();
+// Inside your emailjs.send().then() block:
+       showToast("Message sent! Stella will get back to you shortly. ✨");
+        document.getElementById("contact-form").reset(); // Clears the form after sending
             }, (err) => {
                 btn.innerText = 'Send Message';
                 // This will tell us EXACTLY why it failed in a popup
@@ -169,3 +170,24 @@ var typed = new Typed(".typing", {
     backSpeed: 50,
     loop: true
 });
+function showToast(message) {
+    // Create the element
+    const toast = document.createElement("div");
+    toast.className = "toast-notification";
+    toast.innerText = message;
+    
+    document.body.appendChild(toast);
+
+    // Trigger the slide-in
+    setTimeout(() => {
+        toast.classList.add("active");
+    }, 100);
+
+    // Remove it after 4 seconds
+    setTimeout(() => {
+        toast.classList.remove("active");
+        setTimeout(() => {
+            toast.remove();
+        }, 600); // Wait for transition to finish
+    }, 4000);
+}
