@@ -131,26 +131,7 @@ if (contactForm) {
 // 1. Replace your old alert line with this:
 showToast("Success! Message sent to Stella. 🚀");
 document.getElementById("contact-form").reset(); 
-
-// 2. Add this function at the very bottom of your script.js
-function showToast(message) {
-    // Create the element
-    const toast = document.createElement("div");
-    toast.className = "toast-notification";
-    toast.innerText = message;
-    document.body.appendChild(toast);
-
-    // Show it
-    setTimeout(() => {
-        toast.classList.add("show");
-    }, 100);
-
-    // Hide and remove it after 3 seconds
-    setTimeout(() => {
-        toast.classList.remove("show");
-        setTimeout(() => toast.remove(), 500);
-    }, 3500);
-}
+            }, (err) => {
                 // This will tell us EXACTLY why it failed in a popup
                 alert("Failed to send: " + JSON.stringify(err));
                 console.error("EmailJS Error:", err);
@@ -208,4 +189,24 @@ function showToast(message) {
             toast.remove();
         }, 600); // Wait for transition to finish
     }, 4000);
+}
+
+// 2. Add this function at the very bottom of your script.js
+function showToast(message) {
+    // Create the element
+    const toast = document.createElement("div");
+    toast.className = "toast-notification";
+    toast.innerText = message;
+    document.body.appendChild(toast);
+
+    // Show it
+    setTimeout(() => {
+        toast.classList.add("show");
+    }, 100);
+
+    // Hide and remove it after 3 seconds
+    setTimeout(() => {
+        toast.classList.remove("show");
+        setTimeout(() => toast.remove(), 500);
+    }, 3500);
 }
