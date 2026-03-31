@@ -1087,25 +1087,26 @@ background-clip: text;
         width: 100%;
     }
 }
+/* Custom Success Toast */
 .toast-notification {
     position: fixed;
-    bottom: 30px;
+    top: 20px;
     left: 50%;
-    transform: translateX(-50%) translateY(100px); /* Starts off-screen */
-    background: rgba(25, 25, 25, 0.9); /* Matches your dark theme */
+    transform: translateX(-50%) translateY(-100px); /* Start hidden above screen */
+    background: rgba(10, 10, 10, 0.9);
     backdrop-filter: blur(10px);
-    color: #fff;
-    padding: 15px 30px;
-    border-radius: 50px; /* Capsule shape */
-    border: 1px solid rgba(0, 255, 136, 0.3); /* Slight teal glow */
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    color: #00ff88; /* Teal/Green text for success */
+    padding: 16px 32px;
+    border-radius: 50px;
+    border: 1px solid rgba(0, 255, 136, 0.4);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
     z-index: 10000;
+    font-weight: 500;
     transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 0.5s;
     opacity: 0;
-    pointer-events: none;
 }
 
 .toast-notification.show {
-    transform: translateX(-50%) translateY(0); /* Slides up into view */
+    transform: translateX(-50%) translateY(0); /* Slide down into view */
     opacity: 1;
 }

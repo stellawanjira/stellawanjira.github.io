@@ -128,27 +128,28 @@ if (contactForm) {
         emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, this)
             .then(() => {
                 btn.innerText = 'Send Message';
-// Replace your old alert line with this:
-showToast("Success! Message sent to Stella. She will get back to you shortly. ✨");
+// 1. Replace your old alert line with this:
+showToast("Success! Message sent to Stella. 🚀");
 document.getElementById("contact-form").reset(); 
 
-// Add this function at the very bottom of your script.js file
+// 2. Add this function at the very bottom of your script.js
 function showToast(message) {
+    // Create the element
     const toast = document.createElement("div");
     toast.className = "toast-notification";
     toast.innerText = message;
     document.body.appendChild(toast);
 
-    // Small delay to trigger the CSS transition
+    // Show it
     setTimeout(() => {
         toast.classList.add("show");
     }, 100);
 
-    // Hide and remove after 4 seconds
+    // Hide and remove it after 3 seconds
     setTimeout(() => {
         toast.classList.remove("show");
         setTimeout(() => toast.remove(), 500);
-    }, 4000);
+    }, 3500);
 }
                 // This will tell us EXACTLY why it failed in a popup
                 alert("Failed to send: " + JSON.stringify(err));
