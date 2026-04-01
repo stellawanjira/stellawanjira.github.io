@@ -49,7 +49,7 @@ window.addEventListener('scroll', () => {
 // Target the empty span we just created
 const typingTarget = document.querySelector(".typing-text");
 // The list of titles you want to rotate through
-const roles = ["Stella Wanjira", "a Full-Stack Developer", "an IT Specialist"];
+const roles = ["Stella Wanjira", "a Full-Stack Developer", "Data Analyst", "Ai Specialist" ];
 let roleIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
@@ -157,17 +157,7 @@ themeToggle.addEventListener('click', () => {
     } else {
         localStorage.setItem('theme', 'dark');
     }
-});
-var typed = new Typed(".typing", {
-    strings: [
-        "a Full-Stack Developer",
-        "an IT Student at DeKUT",
-        "a Data Analyst",
-        "a Cybersecurity Enthusiast"
-    ],
-    typeSpeed: 70,
-    backSpeed: 50,
-    loop: true
+
 });
 function showToast(message) {
     // Create the element
