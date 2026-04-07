@@ -49,7 +49,7 @@ window.addEventListener('scroll', () => {
 // Target the empty span we just created
 const typingTarget = document.querySelector(".typing-text");
 // The list of titles you want to rotate through
-const roles = ["Stella Wanjira", "a Full-Stack Developer", "Data Analyst", "Ai Specialist" ];
+const roles = ["a Software Developer", "Data Analyst", "Ai Specialist","Digital Marketer", "Cybersecurity Enthusiast", "Networking Specialist"];
 let roleIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
